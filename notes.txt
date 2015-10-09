@@ -1,0 +1,7 @@
+Service created from automator
+	Setup Rails Env
+		r-click directory and choose service
+		*creates a new terminal window with 3 tabs navigated to clicked directory
+			rails c
+			rails s
+			
