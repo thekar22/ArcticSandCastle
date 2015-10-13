@@ -1,6 +1,3 @@
-# ArcticSandCastle
-Workspace while I'm homeless
-
 Service using applescript created in automator
 
 	Setup Rails Environment:
@@ -28,5 +25,4 @@ Within this directory, create a folder titled "Setup Rails Env.workflow" and nav
 	mkdir "Setup Rails Env.workflow"
 	cd "Setup Rails Env.worfklow"
 
-Clone my repo into this folder. 
-
+Clone my repo into this folder. Open the workflow in automator to edit the script to fit your purposes.
