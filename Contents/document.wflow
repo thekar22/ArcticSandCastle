@@ -51,7 +51,11 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	tell application "Finder"		set my_folder to first item of input		set dir_path to quoted form of (POSIX path of my_folder)				tell application "iTerm"			make new terminal			tell the current terminal				activate current session								-- Rails c				tell the last session					write text "cd " &amp; dir_path					write text "echo rails c"				end tell								-- Rails s				launch session "Default Session"				tell the last session					write text "cd " &amp; dir_path					write text "echo rails s"				end tell								-- Github session				launch session "Default Session"				tell the last session					write text "cd " &amp; dir_path					write text "echo github session"				end tell			end tell		end tell			end tellend run</string>
+					<string>on run {input, parameters}	tell application "Finder"		set my_folder to first item of input		set dir_path to quoted form of (POSIX path of my_folder)				tell application "iTerm"			set myterm to (make new terminal)			tell myterm				set mysession to (make new session at the end of sessions)				tell mysession					exec command "/bin/bash -l"					write text "cd " &amp; dir_path					write text "echo rails c"				end tell				set mysession to (make new session at the end of sessions)				tell mysession
+					exec command "/bin/bash -l"					write text "cd " &amp; dir_path					write text "echo rails s"				end tell
+	
+				set mysession to (make new session at the end of sessions)				tell mysession
+					exec command "/bin/bash -l"					write text "cd " &amp; dir_path					write text "echo git stuff"				end tell						end tell			activate		end tell			end tellend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -102,12 +106,10 @@ end run</string>
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>383.000000:677.000000</string>
+				<string>449.000000:607.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
