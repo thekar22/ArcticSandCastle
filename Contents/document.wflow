@@ -52,11 +52,13 @@
 				<dict>
 					<key>source</key>
 					<string>on run {input, parameters}	tell application "Finder"		set my_folder to first item of input		set dir_path to quoted form of (POSIX path of my_folder)				tell application "iTerm"			set myterm to (make new terminal)			tell myterm				set mysession to (make new session at the end of sessions)				tell mysession					exec command "/bin/bash -l"					write text "cd " &amp; dir_path					write text "echo rails c"
-					set background color to "red"
-					set foreground color to "yellow"				end tell								set mysession to (make new session at the end of sessions)				tell mysession					exec command "/bin/bash -l"					write text "cd " &amp; dir_path					write text "echo rails s"
-					set background color to "blue"
-					set foreground color to "yellow"
-				end tell								set mysession to (make new session at the end of sessions)				tell mysession					exec command "/bin/bash -l"					write text "cd " &amp; dir_path					write text "echo git stuff"				end tell			end tell			activate		end tell			end tellend run</string>
+					set background color to {655, 15072, 22936}
+					set foreground color to {45000, 45000, 45000}				end tell								set mysession to (make new session at the end of sessions)				tell mysession					exec command "/bin/bash -l"					write text "cd " &amp; dir_path					write text "echo rails s"
+					set background color to {655, 15072, 22936}
+					set foreground color to {45000, 45000, 45000}
+				end tell								set mysession to (make new session at the end of sessions)				tell mysession					exec command "/bin/bash -l"					write text "cd " &amp; dir_path					write text "echo git stuff"
+					set background color to {655, 15072, 22936}
+					set foreground color to {45000, 45000, 45000}				end tell			end tell			activate		end tell			end tellend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
